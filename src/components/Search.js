@@ -4,19 +4,8 @@ import React from 'react';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      value: ''
-    };
   }
-
-  handleInputChange(e) {
-    this.props.getYouTubeVideos(e.target.value);
-    this.setState({
-      value: e.target.value
-    });
-  }
-
+  
   render() {
     return (
       <div className="search-bar form-inline">
@@ -24,7 +13,7 @@ class Search extends React.Component {
           className="form-control"
           type="text"
           value={this.state.value}
-          onChange={this.handleInputChange.bind(this)}
+          onChange={this.props.handleSearchInputChange}
         />
         <button className="btn hidden-sm-down">
           <span className="glyphicon glyphicon-search"></span>

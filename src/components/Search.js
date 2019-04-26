@@ -1,26 +1,19 @@
 import React from 'react';
 
  
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  render() {
-    return (
+var Search = ({value, handleSearchInputChange}) => (
       <div className="search-bar form-inline">
         <input
           className="form-control"
           type="text"
-          value={this.state.value}
-          onChange={this.props.handleSearchInputChange}
+          value={value}
+          onChange={handleSearchInputChange}
         />
         <button className="btn hidden-sm-down">
           <span className="glyphicon glyphicon-search"></span>
         </button>
       </div>
-    );
-  }
-}
+);
+  
 
 export default Search;
